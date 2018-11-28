@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+
+import { theme } from './config/theme'
 import './App.css'
 
 import Login from './pages/login.js'
@@ -6,7 +9,9 @@ import Login from './pages/login.js'
 class App extends Component {
   render () {
     return (
-      <Login />
+      <MuiThemeProvider theme={theme}>
+        <Login />
+      </MuiThemeProvider>
     )
   }
 }

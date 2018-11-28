@@ -1,5 +1,4 @@
 import React from 'react'
-import pink from '@material-ui/core/colors/pink'
 import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -13,7 +12,11 @@ import Face from '@material-ui/icons/Face'
 import MailOutline from '@material-ui/icons/MailOutline'
 import Lock from '@material-ui/icons/Lock'
 
-import backgroundImage from '../assets/login-background.jpg'
+import { palette } from '../config/theme'
+import backgroundImage from '../assets/imgs/login-background.jpg'
+import facebookLogo from '../assets/fonts/facebook.svg'
+import googleLogo from '../assets/fonts/google.svg'
+import twitterLogo from '../assets/fonts/twitter.svg'
 
 const styles = {
   container: {
@@ -41,10 +44,14 @@ const styles = {
     top: '-5%',
     left: '50%',
     transform: 'translateX(-50%)',
-    backgroundColor: pink[400]
+    backgroundColor: palette.primary.main
   },
   button: {
     margin: '2rem auto 1rem'
+  },
+  icon: {
+    height: '1.6rem',
+    width: 'auto'
   }
 }
 
@@ -55,14 +62,20 @@ const Login = () => (
       <CardContent style={{ marginTop: '6rem' }}>
         <Card elevation={3} style={styles.innerCard}>
           <CardContent>
-            <Typography align='center' component='h3'>
+            <Typography style={{ color: '#fff' }} variant='h5' align='center' component='h3'>
               Log in
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button>F</Button>
-            <Button>T</Button>
-            <Button>G</Button>
+          <CardActions style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button style={{ color: '#fff' }}>
+              <img style={styles.icon} src={facebookLogo} alt='Facebook logo' />
+            </Button>
+            <Button style={{ color: '#fff' }}>
+              <img style={styles.icon} src={twitterLogo} alt='Twitter logo' />
+            </Button>
+            <Button style={{ color: '#fff' }}>
+              <img style={styles.icon} src={googleLogo} alt='Google logo' />
+            </Button>
           </CardActions>
         </Card>
         <FormControl fullWidth>
